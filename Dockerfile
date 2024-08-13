@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
 RUN git clone --recursive https://github.com/tauzn-clock/Depth-Anything-V2 /depthanything
 WORKDIR /depthanything
